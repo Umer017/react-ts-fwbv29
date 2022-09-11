@@ -2,14 +2,19 @@ import * as React from 'react';
 import './style.css';
 import Calbutton from './Calbutton';
 export default function Calculator() {
-  const [display, setDisplay] = React.useState(0);
+  const [display, setDisplay] = React.useState({
+    current: '0',
+    total: '0',
+  });
   function NumberHandler(value) {
-    setDisplay(value);
+    let newVal = value;
+    newVal = display.current + value;
+    setDisplay({ current: newVal, total: display.total });
   }
   function OperaterHandler() {}
   return (
     <div className="app-container">
-      <div className="display">{display}</div>
+      <div className="display">{display.current}</div>
       <Calbutton value="7" onClick={NumberHandler} />
       <Calbutton value="8" onClick={NumberHandler} />
       <Calbutton value="9" onClick={NumberHandler} />

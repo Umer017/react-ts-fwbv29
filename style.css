@@ -1,6 +1,6 @@
 .app-container {
   display: grid;
-  grid-template-columns: repeat(4, 50px);
+  grid-template-columns: repeat(4, 70px);
 }
 
 button {
